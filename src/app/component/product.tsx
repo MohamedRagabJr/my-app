@@ -48,9 +48,11 @@ import productData from "../productdata";
 export default function Product() {
   const [isFiltered, setIsFiltered] = useState(false);
 
-  const filteredProducts = isFiltered
-    ? productData.filter((product) => Number(product.price) < 50)
-    : productData;
+  const filteredProducts = (
+    isFiltered
+      ? productData.filter((product) => Number(product.price) < 50)
+      : productData
+  ).slice(0, 8); // This will take only the first 12 products
 
   const handleToggleFilter = () => {
     setIsFiltered((prev) => !prev);
@@ -62,13 +64,13 @@ export default function Product() {
         onClick={handleToggleFilter}
         className="bg-blue-500 text-white px-4 py-2 rounded mb-5 hover:bg-blue-600"
       >
-        {isFiltered ? "Show All Products" : "Show Products with Price > 50"}
+        {isFiltered ? "Show All Products" : "Show Products with Price < 50"}
       </button>
 
       <div className="flex justify-center flex-wrap">
         {filteredProducts.map((product) => (
           <div
-            className="card mx-9 border p-3 rounded-2xl max-w-xs"
+            className="card mx-3 border mb-5 p-3 rounded-2xl max-w-xs"
             key={product.id}
           >
             <img

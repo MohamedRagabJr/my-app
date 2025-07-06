@@ -1,25 +1,24 @@
-'use client'; // Required for client-side components
+"use client"; // Required for client-side components
 
-import Nav from "./component/nav";
 import Product from "./component/product";
 
-export default function Home() {  
+export default function Home() {
   return (
     <div className="min-h-screen">
-      <Nav />
-      
       <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">Featured Content</h1>
-        
+        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          Featured Content
+        </h1>
+
         <div className="mt-16 text-center">
           <h2 className="text-2xl font-semibold mb-4">Welcome to Our Site</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our collection of featured items in the interactive carousel above.
-            Each slide showcases different aspects of our work and services.
+            Explore our collection of featured items in the interactive carousel
+            above. Each slide showcases different aspects of our work and
+            services.
           </p>
           <Product />
         </div>
-        
       </main>
     </div>
   );
