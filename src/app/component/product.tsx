@@ -52,7 +52,7 @@ export default function Product() {
     isFiltered
       ? productData.filter((product) => Number(product.price) < 50)
       : productData
-  ).slice(0, 8); // This will take only the first 12 products
+  ).slice(0, 4); // This will take only the first 12 products
 
   const handleToggleFilter = () => {
     setIsFiltered((prev) => !prev);
