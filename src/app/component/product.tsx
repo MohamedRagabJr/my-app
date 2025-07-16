@@ -70,7 +70,7 @@ export default function Product() {
       <div className="flex justify-center flex-wrap">
         {filteredProducts.map((product) => (
           <div
-            className="card mx-3 border mb-5 p-3 rounded-2xl max-w-xs"
+            className="card mx-3 bg-base-100 shadow-sm border mb-5 p-3 rounded-2xl max-w-xs"
             key={product.id}
           >
             <img
@@ -80,13 +80,24 @@ export default function Product() {
               height={200}
               className="rounded"
             />
-            <h1 className="text-xl font-bold mt-2">{product.title}</h1>
-            <p className="text-gray-600">{product.description}</p>
-            <span className="text-green-600 font-semibold">
-              {product.price}
-            </span>
+            <div className="card-body">
+              <h1 className="text-xl font-bold mt-2">{product.title}</h1>
+              <p className="text-gray-600">{product.description}</p>
+              <span className="text-green-600 font-semibold">
+                {product.price}
+              </span>
+              <div className="card-actions justify-end">
+                <button className="btn btn-primary">Buy Now</button>
+            </div>
+            </div>
           </div>
         ))}
+      </div>
+      <div className="join">
+        <button className="join-item btn">1</button>
+        <button className="join-item btn btn-active">2</button>
+        <button className="join-item btn">3</button>
+        <button className="join-item btn">4</button>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 "use client"; // Required for client-side components
 
 import Product from "./component/product";
+import Breadcrumb from "./component/breadcrumb";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             above. Each slide showcases different aspects of our work and
             services.
           </p>
+          <Breadcrumb />
           <Product />
         </div>
       </main>
